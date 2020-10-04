@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -10,7 +10,7 @@
     <PackageId>WowUp</PackageId>
     <Authors>Jliddev</Authors>
     <Product>WowUp</Product>
-    <Version>1.17.4</Version>
+    <Version>1.19.0-beta.1</Version>
     <ApplicationIcon>wowup_logo_512np_RRT_icon.ico</ApplicationIcon>
     <Copyright>jliddev</Copyright>
     <PackageProjectUrl>https://wowup.io</PackageProjectUrl>
@@ -19,10 +19,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <SignAssembly>true</SignAssembly>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
   </PropertyGroup>
 
   <ItemGroup>
-    <TrimmerRootAssembly Include="System.IO" />
+    <TrimmerRootAssembly Include="System.Runtime" />
+    <TrimmerRootAssembly Include="System.Diagnostics.Debug" />
+    <TrimmerRootAssembly Include="System.Runtime.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,13 +59,13 @@
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="2.4.2" />
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.0.8" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.1" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.1" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.7" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.3" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.3" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.8" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
     <PackageReference Include="protobuf-net" Version="3.0.29" />
-    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
